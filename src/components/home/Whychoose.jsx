@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import {
   ShieldCheck,
   Clock3,
@@ -54,18 +53,12 @@ export default function WhyChoose() {
     <section className="bg-slate-900 py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Heading */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mx-auto max-w-3xl text-center"
-        >
+        <div className="mx-auto max-w-3xl text-center">
           <span className="rounded-full bg-cyan-500/20 px-5 py-2 text-sm font-semibold text-cyan-400">
-            Why Choose FORCE
+            Why Choose BSECURE
           </span>
 
-          <h2 className="mt-6 text-4xl md:text-5xl font-black text-white">
+          <h2 className="mt-6 text-4xl font-black text-white md:text-5xl">
             Trusted by Families &
             <span className="text-cyan-400"> Businesses</span>
           </h2>
@@ -75,23 +68,19 @@ export default function WhyChoose() {
             high-quality home care, security, and cleaning services tailored to
             your needs.
           </p>
-        </motion.div>
+        </div>
 
         {/* Cards */}
         <div className="mt-20 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {features.map((item, index) => {
+          {features.map((item) => {
             const Icon = item.icon;
 
             return (
-              <motion.div
+              <div
                 key={item.title}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
                 className="group rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400 hover:bg-white/10"
               >
-                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-cyan-500 text-white transition duration-300 group-hover:rotate-6 group-hover:scale-110">
+                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-cyan-500 text-white transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110">
                   <Icon size={30} />
                 </div>
 
@@ -102,7 +91,7 @@ export default function WhyChoose() {
                 <p className="mt-4 leading-7 text-slate-300">
                   {item.description}
                 </p>
-              </motion.div>
+              </div>
             );
           })}
         </div>

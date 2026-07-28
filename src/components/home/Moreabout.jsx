@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { ArrowRight, Award, Users, ShieldCheck, Clock3 } from "lucide-react";
 
 const stats = [
@@ -33,13 +32,7 @@ export default function About() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid items-center gap-20 lg:grid-cols-2">
           {/* Images */}
-          <motion.div
-            initial={{ opacity: 0, x: -60 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative"
-          >
+          <div className="relative">
             <img
               src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=900&q=80"
               alt="Care Team"
@@ -56,17 +49,12 @@ export default function About() {
               <p className="text-3xl font-black text-cyan-600">10+</p>
               <p className="text-sm text-slate-600">Years of Excellence</p>
             </div>
-          </motion.div>
+          </div>
 
           {/* Content */}
-          <motion.div
-            initial={{ opacity: 0, x: 60 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
+          <div>
             <span className="rounded-full bg-cyan-100 px-4 py-2 text-sm font-semibold text-cyan-700">
-              About FORCE
+              About BSECURE
             </span>
 
             <h2 className="mt-6 text-4xl font-black leading-tight text-slate-900 md:text-5xl">
@@ -75,13 +63,13 @@ export default function About() {
             </h2>
 
             <p className="mt-6 text-lg leading-8 text-slate-600">
-              FORCE provides reliable Home Care, Security Services and
+              BSECURE provides reliable Home Care, Security Services and
               Professional Cleaning with a customer-first approach. Our trained
               team is committed to delivering safe, dependable and high-quality
               solutions for families, hospitals, offices and businesses.
             </p>
 
-            <p className="mt-6 text-slate-600 leading-7">
+            <p className="mt-6 leading-7 text-slate-600">
               Every professional is carefully selected and trained to maintain
               the highest standards of quality, professionalism and customer
               satisfaction.
@@ -114,7 +102,7 @@ export default function About() {
               Learn More About Us
               <ArrowRight size={18} />
             </Link>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

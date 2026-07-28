@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
 import {
   HeartHandshake,
   ShieldCheck,
@@ -33,30 +32,25 @@ const services = [
 
 export default function AboutSection() {
   return (
-    <section className="relative bg-white py-24 overflow-hidden">
+    <section className="relative overflow-hidden bg-white py-24">
       {/* Background Decoration */}
-      <div className="absolute -top-32 -left-32 h-80 w-80 rounded-full bg-cyan-100 blur-3xl opacity-60" />
-      <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-sky-100 blur-3xl opacity-60" />
+      <div className="absolute -top-32 -left-32 h-80 w-80 rounded-full bg-cyan-100 opacity-60 blur-3xl" />
+      <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-sky-100 opacity-60 blur-3xl" />
 
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid items-center gap-20 lg:grid-cols-2">
           {/* Left */}
-          <motion.div
-            initial={{ opacity: 0, x: -60 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <span className="inline-flex rounded-full bg-cyan-100 px-4 py-2 text-cyan-700 font-semibold">
+          <div>
+            <span className="inline-flex rounded-full bg-cyan-100 px-4 py-2 font-semibold text-cyan-700">
               About BSECURE
             </span>
 
-            <h2 className="mt-6 text-4xl lg:text-5xl font-black text-slate-900 leading-tight">
+            <h2 className="mt-6 text-4xl font-black leading-tight text-slate-900 lg:text-5xl">
               Trusted Professionals for
               <span className="text-cyan-600"> Care, Security & Cleaning</span>
             </h2>
 
-            <p className="mt-6 text-lg text-slate-600 leading-8">
+            <p className="mt-6 text-lg leading-8 text-slate-600">
               BSECURE is committed to providing dependable, high-quality
               services that improve the lives of families and businesses. Our
               trained, verified professionals ensure safety, comfort, and peace
@@ -71,7 +65,7 @@ export default function AboutSection() {
                 "Reliable & On-Time Service",
               ].map((item) => (
                 <div key={item} className="flex items-center gap-3">
-                  <CheckCircle2 className="text-cyan-600" size={22} />
+                  <CheckCircle2 size={22} className="text-cyan-600" />
                   <span className="text-slate-700">{item}</span>
                 </div>
               ))}
@@ -79,21 +73,15 @@ export default function AboutSection() {
 
             <Link
               href="/about"
-              className="inline-flex items-center gap-2 mt-10 rounded-full bg-slate-900 px-7 py-4 text-white font-semibold hover:bg-cyan-600 transition"
+              className="mt-10 inline-flex items-center gap-2 rounded-full bg-slate-900 px-7 py-4 font-semibold text-white transition hover:bg-cyan-600"
             >
               Learn More
               <ArrowRight size={18} />
             </Link>
-          </motion.div>
+          </div>
 
           {/* Right */}
-          <motion.div
-            initial={{ opacity: 0, x: 60 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="grid gap-6"
-          >
+          <div className="grid gap-6">
             {services.map((service, index) => {
               const Icon = service.icon;
 
@@ -103,7 +91,7 @@ export default function AboutSection() {
                   className="group rounded-3xl border border-slate-200 bg-white p-8 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-cyan-500 hover:shadow-2xl"
                 >
                   <div className="flex items-start gap-5">
-                    <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-cyan-500 text-white transition group-hover:scale-110">
+                    <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-cyan-500 text-white transition-transform duration-300 group-hover:scale-110">
                       <Icon size={30} />
                     </div>
 
@@ -112,7 +100,7 @@ export default function AboutSection() {
                         {service.title}
                       </h3>
 
-                      <p className="mt-3 text-slate-600 leading-7">
+                      <p className="mt-3 leading-7 text-slate-600">
                         {service.description}
                       </p>
                     </div>
@@ -120,7 +108,7 @@ export default function AboutSection() {
                 </div>
               );
             })}
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

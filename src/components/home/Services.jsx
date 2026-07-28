@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
 import {
   HeartHandshake,
   ShieldCheck,
@@ -44,13 +43,7 @@ export default function ServicesSection() {
     <section className="bg-slate-50 py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Heading */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mx-auto mb-16 max-w-3xl text-center"
-        >
+        <div className="mx-auto mb-16 max-w-3xl text-center">
           <span className="rounded-full bg-cyan-100 px-5 py-2 text-sm font-semibold text-cyan-700">
             Our Services
           </span>
@@ -65,20 +58,16 @@ export default function ServicesSection() {
             experienced professionals committed to your safety, comfort and
             peace of mind.
           </p>
-        </motion.div>
+        </div>
 
         {/* Cards */}
         <div className="grid gap-8 lg:grid-cols-3">
-          {services.map((service, index) => {
+          {services.map((service) => {
             const Icon = service.icon;
 
             return (
-              <motion.div
+              <div
                 key={service.title}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.15 }}
                 className="group overflow-hidden rounded-3xl bg-white shadow-lg transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl"
               >
                 {/* Image */}
@@ -86,7 +75,7 @@ export default function ServicesSection() {
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
 
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
@@ -108,32 +97,27 @@ export default function ServicesSection() {
 
                   <Link
                     href={service.href}
-                    className="mt-8 inline-flex items-center gap-2 font-semibold text-cyan-600 transition hover:gap-3"
+                    className="mt-8 inline-flex items-center gap-2 font-semibold text-cyan-600 transition-all duration-300 hover:gap-3"
                   >
                     Learn More
                     <ArrowRight size={18} />
                   </Link>
                 </div>
-              </motion.div>
+              </div>
             );
           })}
         </div>
 
         {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="mt-16 text-center"
-        >
+        <div className="mt-16 text-center">
           <Link
             href="/services/home-care"
-            className="inline-flex items-center gap-3 rounded-full bg-slate-900 px-8 py-4 text-white font-semibold transition hover:bg-cyan-600"
+            className="inline-flex items-center gap-3 rounded-full bg-slate-900 px-8 py-4 font-semibold text-white transition hover:bg-cyan-600"
           >
             View All Services
             <ArrowRight size={18} />
           </Link>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

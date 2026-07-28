@@ -7,11 +7,10 @@ import {
   HeartHandshake,
   Sparkles,
 } from "lucide-react";
-import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="relative h-[100svh] overflow-hidden bg-slate-950">
+    <section className="relative min-h-screen overflow-hidden bg-slate-950">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center"
@@ -24,18 +23,14 @@ export default function Hero() {
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/80 to-slate-900/60" />
 
-      {/* Blur */}
+      {/* Blur Effects */}
       <div className="absolute -top-20 -left-20 h-96 w-96 rounded-full bg-cyan-500/20 blur-3xl" />
       <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-blue-600/20 blur-3xl" />
 
-      <div className="relative z-10 mx-auto flex h-full max-w-7xl items-center px-6 lg:px-8">
+      <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl items-center px-6 lg:px-8">
         <div className="grid w-full items-center gap-12 lg:grid-cols-2">
           {/* Left Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-          >
+          <div>
             <span className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-500/10 px-4 py-2 text-sm text-cyan-300">
               <Sparkles size={16} />
               Trusted Professional Services
@@ -43,7 +38,7 @@ export default function Hero() {
 
             <h1 className="mt-6 text-4xl font-black leading-tight text-white sm:text-5xl lg:text-7xl">
               Complete
-              <span className="block text-cyan-400">Care & Security</span>
+              <span className="block text-cyan-400">Care &amp; Security</span>
               Solutions
             </h1>
 
@@ -88,15 +83,10 @@ export default function Hero() {
                 Our Services
               </Link>
             </div>
-          </motion.div>
+          </div>
 
           {/* Right Image */}
-          <motion.div
-            initial={{ opacity: 0, x: 80 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
-            className="hidden lg:flex justify-center"
-          >
+          <div className="hidden justify-center lg:flex">
             <div className="relative">
               <div className="absolute inset-0 rounded-[40px] bg-cyan-500/20 blur-3xl" />
 
@@ -118,7 +108,7 @@ export default function Hero() {
                 <p className="text-sm text-slate-300">Verified Staff</p>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
 
