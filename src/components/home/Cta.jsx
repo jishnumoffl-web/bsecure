@@ -49,7 +49,7 @@ export default function CTASection() {
                 </Link>
 
                 <Link
-                  href="tel:+919876543210"
+                  href="tel:+919447272000"
                   className="inline-flex items-center gap-2 rounded-full border border-white/30 px-8 py-4 font-semibold text-white transition hover:bg-white/10"
                 >
                   <Phone size={20} />
@@ -70,7 +70,10 @@ export default function CTASection() {
                     <h4 className="text-xl font-bold text-white">
                       Call Us Anytime
                     </h4>
-                    <p className="text-cyan-100">+91 98765 43210</p>
+                    <p className="text-cyan-100">
+                      {" "}
+                      +91 9447272000 | +91 9207273700
+                    </p>
                   </div>
                 </div>
               </div>
