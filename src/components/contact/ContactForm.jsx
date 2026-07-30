@@ -123,6 +123,12 @@ ${form.message || "No message provided"}
                   🩺 Hospital Bystander
                 </option>
                 <option value="Maternity Care">🤱 Maternity Care</option>
+                <option value="Maternity Care"> Security guard</option>
+                <option value="Maternity Care">Sofa cleaning</option>
+                <option value="Maternity Care">Carpet cleaning</option>
+                <option value="Maternity Care">Deep cleaning</option>
+                <option value="Maternity Care">Water tank cleaning</option>
+                <option value="Maternity Care">Interlock cleaning</option>
               </select>
 
               <textarea
